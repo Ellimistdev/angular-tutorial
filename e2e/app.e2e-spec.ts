@@ -1,10 +1,10 @@
-import { AngularTourOfHeroesPage } from './app.po';
+import { StubPage } from './app.po';
 
-describe('angular-tour-of-heroes App', () => {
-  let page: AngularTourOfHeroesPage;
+describe('stub App', () => {
+  let page: StubPage;
 
   beforeEach(() => {
-    page = new AngularTourOfHeroesPage();
+    page = new StubPage();
   });
 
   it('should display welcome message', () => {
