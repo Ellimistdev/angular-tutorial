@@ -39,12 +39,17 @@ export class HeroSearchComponent implements OnInit {
         this.heroes = this.searchTerms
             .debounceTime(300)
             .distinctUntilChanged()
-            .switchMap(term => term
+            .switchMap(term => term 
             ? this.heroSearchService.search(term)
             : Observable.of<Hero[]>([]))
             .catch(error => {
                 console.log(error);
                 return Observable.of<Hero[]>([]);
             });
+    }
+
+    gotoDetail(hero: Hero): void {
+        let link = ['/detail', hero.id];
+        this.router.navigate(link);
     }
 }
